@@ -10,13 +10,24 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #ffffff;
+    overflow: hidden;
     background-color: #050505;
+}
+
+.bg-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: #ffffff;
-    overflow: hidden;
+    z-index: -1;
+    opacity: 0;
+    animation: fadeInBg 2s ease-out forwards;
 }
 
 .container {
@@ -90,6 +101,12 @@ p {
 
 .delay-2 { 
     animation-delay: 0.4s; 
+}
+
+@keyframes fadeInBg {
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeInUp {
